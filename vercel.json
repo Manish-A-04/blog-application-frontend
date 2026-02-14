@@ -1,5 +1,5 @@
 {
-    "rewrites": [
+    "routes": [
         {
             "src": "/api/(.*)",
             "dest": "http://13.50.15.214/$1"
