@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary: #10b981;
+  --accent: #06b6d4;
+  --background: #0a0e27;
+  --background-secondary: #111827;
+  --foreground: #f3f4f6;
+  --foreground-secondary: #d1d5db;
+  --border: #1f2937;
+  --muted: #6b7280;
+  --radius: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
+}
+
+::selection {
+  @apply bg-primary text-white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded hover:bg-muted;
+}
+
+/* Markdown Styles */
+.markdown-content {
+  @apply max-w-none;
+}
+
+.markdown-content h1 {
+  @apply text-4xl font-bold mt-8 mb-4 text-foreground;
+}
+
+.markdown-content h2 {
+  @apply text-3xl font-bold mt-6 mb-3 text-foreground;
+}
+
+.markdown-content h3 {
+  @apply text-2xl font-bold mt-5 mb-2 text-foreground;
+}
+
+.markdown-content p {
+  @apply text-base leading-relaxed mb-4 text-foreground-secondary;
+}
+
+.markdown-content a {
+  @apply text-accent hover:text-primary transition-colors underline;
+}
+
+.markdown-content code {
+  @apply bg-background-secondary text-accent px-2 py-1 rounded font-mono text-sm;
+}
+
+.markdown-content pre {
+  @apply bg-background-secondary p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-primary pl-4 italic text-muted my-4;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply ml-6 my-4;
+}
+
+.markdown-content li {
+  @apply mb-2;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-opacity duration-300;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse;
+}
+
+/* Glassmorphism effect */
+.glassmorphism {
+  @apply backdrop-blur-md bg-white/5 border border-white/10;
+}
+
+/* Smooth fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
